@@ -7,11 +7,26 @@
 </head>
 <body>
     <script>
-        let alfajores = 2000
-        let precio = 1800
-        monto = alfajores*precio
-        console.log("El precio final de la venta es: "+monto+"$")
-        document.write("El precio final de la venta es: "+monto+"$")
+        let opcion = prompt("Eliga un numero segun el componente:\n1 = Placa madre\n2 = Procesador\n3 = Memoria RAM\n4 = Disco rigido/SDD\n5 = Fuente de Poder");
+        switch(opcion){
+            case "1":
+                console.log("Registrar numero de serie y estado general.");
+                break;
+            case "2":
+                console.log("Controlar temperatura durante el funcionamiento.");
+                break;
+            case "3":
+                console.log("Ejecutar una prueba de rendimiento.");
+                break;
+            case "4":
+                console.log("Verificar espacio disponible y estado del almacenamiento.");
+                break;
+            case "5":
+                console.log("Comprobar conexiones electricas.");
+                break;
+            default:
+                console.log("Error, esta opcion no esta dentro de la lista.\nVuelve a intentarlo.");
+        }
     </script>
 </body>
 </html>

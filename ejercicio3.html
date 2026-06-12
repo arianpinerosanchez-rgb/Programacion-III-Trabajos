@@ -7,29 +7,36 @@
 </head>
 <body>
     <script>
-        let num1 = parseInt(prompt("Ingrese un numero"));
-        let num2 = parseInt(prompt("Ingrese otro numero"));
-        let op = prompt("Ingrese un operador (+, -, *, /, %)");
-        if(op=="+"){
-            suma = num1+num2;
-            console.log("El resultado de la suma es: "+suma);
-        }else if(op =="-"){
-            resta = num1-num2;
-            console.log("El resultado de la resta es: "+resta);
-        }else if(op=="*"){
-            multi = num1*num2;
-            console.log("El resultado de la multiplicacion es: "+multi);
-        }else if(op=="/"){
-            if(num1==0||num2==0){
-                console.log("Error, no se pueden realizar divisiones con 0");
-            }else{
-                div = num1/num2;
-                console.log("El resultado de la division es: "+div);
-            }
-        }else if(op=="%"){
-            mod = num1%num2;
-            console.log("El el resto de la division es: "+mod);
+        let nombre = prompt("Ingrese el nombre del equipo");
+        let prioridad = prompt("Ingrese el nivel de prioridad de la tarea:\n1 = Baja\n2 = Media\n3 = Alta");
+        let msj_prioridad = "";
+        let estado = "";
+        switch(prioridad){
+            case "1":
+                msj_prioridad="La tarea puede programarse para los proximos dias.";
+                break;
+            case "2":
+                msj_prioridad="La tarea debe realizarse esta semana.";
+                break;
+            case "3":
+                msj_prioridad="La taeea requiere atencion inmediata.";
+                break;
+            default:
+                console.log("Error: no existe esta opcion en la lista.\nVuelve a intentarlo.");
         }
+        let dias = parseInt(prompt("Ingrese la cantidad de dias transcurridos desde que se reporto el problema"));
+        if(dias<0){
+            console.log("Error: No se pueden ingresar valores negativos.\nVuelve a intentarlo.")
+        }else if(dias<3){
+            estado="Seguimiento normal.";
+        }else if(dias>=3&&dias<=7){
+            estado="Realizar control del estado de la tarea.";
+        }else if(dias>7){
+            estado="Generar alerta por demora.";
+        }
+        console.log("INFO:\n\nNombre del equipo: "+nombre+"\nNivel de prioridad: "+prioridad+"\nMensaje de prioridad: "+msj_prioridad+"\nCantidad de dias transcurridos: "+dias+"\nEstado de seguimiento: "+estado);
+        
+        alert("INFO:\n\nNombre del equipo: "+nombre+"\nNivel de prioridad: "+prioridad+"\nMensaje de prioridad: "+msj_prioridad+"\nCantidad de dias transcurridos: "+dias+"\nEstado de seguimiento: "+estado);
     </script>
 </body>
 </html>

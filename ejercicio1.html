@@ -7,15 +7,22 @@
 </head>
 <body>
     <script>
-        let a = parseInt(prompt("Ingrese un numero"));
-        let b = parseInt(prompt("Ingrese otro numero"));
-        suma = a+b;
-        resta = a-b;
-        multi = a*b;
-        div = a/b;
-        mod = a%b;
-        pot = a**b;
-        console.log("Suma: " + suma + "\nResta: " + resta + "\nMultiplicación: " + multi+"\nDivision: "+div+"\nResto: "+mod+"\nPotencia: "+pot);
-        </script>
+        let componente = prompt("Ingrese el nombre del componente");
+        let stock = parseInt(prompt("Ingrese la cantidad actual en stock"));
+        let estado = "";
+        if(stock<0){
+            console.log("Error: no puedes ingresar valores negativos, vuelve a intentarlo.");
+        }else if(stock>=3&&stock<=10){
+            estado="Stock bajo, considerar reponer.";
+            console.log("Resumen:"+"\nComponente: "+componente+"\nCantidad actual: "+ stock+"\nEstado: "+estado);
+        }else if(stock>10){
+            estado="Stock suficiente.";
+            console.log("Resumen:"+"\nComponente: "+componente+"\nCantidad actual: "+ stock+"\nEstado: "+estado);
+        }else if(stock<3){
+            estado="Pedido urgente.";
+            console.log("Resumen:"+"\nComponente: "+componente+"\nCantidad  actual: "+ stock+"\nEstado: "+estado);
+        }
+    </script>
 </body>
+
 </html>
